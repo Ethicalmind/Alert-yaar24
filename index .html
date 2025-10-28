@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCampus – Student Safety App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🧩 OpenCampus</h1>
+    <p>Your Campus Safety Companion</p>
+  </header>
+
+  <main>
+    <section id="sos">
+      <h2>🚨 Emergency SOS</h2>
+      <button id="sosBtn">Send SOS Alert</button>
+      <p id="location"></p>
+    </section>
+
+    <section id="report">
+      <h2>📢 Anonymous Report</h2>
+      <form id="reportForm">
+        <textarea placeholder="Describe the issue..." required></textarea>
+        <button type="submit">Submit Report</button>
+      </form>
+      <p id="submitMsg"></p>
+    </section>
+
+    <section id="info">
+      <h2>📚 Awareness Zone</h2>
+      <ul>
+        <li>Anti-Ragging Helpline: 1800-180-5522</li>
+        <li>Women Safety Helpline: 1091</li>
+        <li>Police: 100 | Fire: 101 | Ambulance: 102</li>
+      </ul>
+    </section>
+
+    <section id="map">
+      <h2>🗺️ Safe Zones Map</h2>
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 OpenCampus | Built by Animesh Jha</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    window.gm_authFailure = function() {
+      var d = document.getElementById('googleMap');
+      d.innerHTML = '<div class="map-error">Google Maps failed to load. Check API key, billing and console for details.</div>';
+    };
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAosRCM1UgqLx7Q7b7PNvyAbqxRF6EGvzo&callback=initMap&v=weekly"></script>
+</body>
+</html>
